@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+	<title>App Banner</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body>
+
+	<div id="app-banner" style="width: 102%; margin: -1%; padding: 0px; position: fixed; bottom: 0px; left: 0px; z-index: 2147483647;">
+		<a href="https://play.google.com/store/apps/details?id=fi.personalraineri&hl=fi">
+			<img src="http://personaltravis.com/wp-content/uploads/2015/07/app-banner.png" style="width: 100%; margin: -4px; padding: 0px;" />
+		</a>
+		<img src="http://personaltravis.com/wp-content/uploads/2015/07/close-symbol.png" style="position: absolute; top: 0px; left: 0px; width: 5%; margin: 4%;"
+		  onclick="$('#app-banner').fadeOut();" />
+	</div>
+
+	<script>
+		jQuery(document).ready(function($){
+			jQuery(document).ready(function($){
+				$('#app-banner').hide();
+				var ua = navigator.userAgent.toLowerCase();
+				var isAndroid = ua.indexOf("android") > -1;
+				if(isAndroid) { // } else { 
+					$('#app-banner').fadeIn();
+				}
+			});
+		});
+	</script>
+
+</body>
